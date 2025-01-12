@@ -13,6 +13,7 @@ public  class StudentManagement{
                 throw new IllegalArgumentException("Student already exists");
             }
             students.put(student.roll, student);
+            System.out.println("Student added successfully");
         }
         catch (Exception e){
             System.out.println(e);
@@ -20,8 +21,25 @@ public  class StudentManagement{
 
     }
 
+    public void display(){
+        students.forEach((k,v)->{
+            System.out.println(v.firstName+" "+v.lastName+" "+v.roll+" "+v.age+" "+v.gender+" "+v.grade);
+        });
+    }
     public Student get(int roll){
         return students.get(roll);
+    }
+    public  Student remove(int roll){
+        try {
+            if (!students.containsKey(roll)) {
+                throw new IllegalArgumentException("Student does not exist");
+            }
+            return students.remove(roll);
+        }
+        catch (Exception e){
+            System.out.println(e);
+            return null;
+        }
     }
 
 }
