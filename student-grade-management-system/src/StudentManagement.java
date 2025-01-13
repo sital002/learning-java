@@ -33,7 +33,7 @@ public  class StudentManagement{
             if (!students.containsKey(roll)) {
                 throw new IllegalArgumentException("Student does not exist");
             }
-            System.out.println("Student removed sucessfully");  
+            System.out.println("Student removed sucessfully");
             return students.remove(roll);
         }
         catch (Exception e){
