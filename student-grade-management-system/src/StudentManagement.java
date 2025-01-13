@@ -7,7 +7,7 @@ public  class StudentManagement{
         students = new HashMap<>();
     }
 
-    public  void addS(Student student){
+    public  void add(Student student){
         try {
             if (students.containsKey(student.roll)) {
                 throw new IllegalArgumentException("Student already exists");
@@ -18,7 +18,6 @@ public  class StudentManagement{
         catch (Exception e){
             System.out.println(e);
         }
-
     }
 
     public void display(){
