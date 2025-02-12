@@ -4,18 +4,18 @@
 package org.example;
 
 
-abstract  class Animal {
-    abstract void  makeSound();
-    void sleep(){
-        System.out.println("Sleeping...");
-    }
 
+
+
+
+interface Animal {
+    void makeSound();
 }
 
-class  Dog extends Animal {
+class Dog implements Animal {
     @Override
-    void makeSound() {
-        System.out.println("Bark...");
+    public void makeSound() {
+        System.out.println("Bark!");
     }
 }
 
@@ -25,7 +25,6 @@ public class App {
     public static void main(String[] args) {
 
         Dog dog = new Dog();
-        dog.sleep();
         dog.makeSound();
     }
 }
